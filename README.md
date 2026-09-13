@@ -1,23 +1,67 @@
 # Setu
 
-> An open-source personal cross-device inbox that helps you intentionally send links and text between your devices, allowing you to continue where you left off—even if the receiving device was offline when you sent it.
+> A simple desktop app for sharing text and links through a focused, lightweight interface.
+
+Setu is an open-source project built around a simple idea: make it easy to save and move useful information between devices without relying on complicated workflows.
+
+The current version is a desktop MVP built with Tauri, React, TypeScript, FastAPI, and SQLite.
+
+![Setu Preview](docs/images/setu-preview.png)
 
 ---
 
-## Why Setu?
+## Features
 
-Setu was born from a simple problem:
-
-You often discover useful information on one device while working on another. Maybe you find a useful article on your phone while you're away from your computer, or you copy a link on your PC that you'll need later on your phone.
-
-Instead of messaging yourself, searching through browser history, or hoping you remember later, Setu provides a simple, intentional way to send information between your own devices.
-
-The goal is to make information available when and where you need it.
+- Share text through a simple desktop interface
+- Automatically detect links
+- Open shared links directly in the browser
+- Copy shared content to the clipboard
+- Delete individual shares
+- Manually refresh recent shares
+- Automatically refresh shares every 5 seconds
+- Loading state while sharing
+- Backend connection error handling
+- Lightweight desktop application using Tauri
 
 ---
 
-## Project Status
+## Tech Stack
 
-🚧 Planning Phase
+### Desktop
 
-The project is currently in the design and documentation stage before implementation begins.
+- Tauri
+- React
+- TypeScript
+- Vite
+
+### Backend
+
+- Python
+- FastAPI
+- SQLAlchemy
+- SQLite
+- REST API
+
+---
+
+## Architecture
+
+```text
+┌─────────────────────┐
+│     Setu Desktop    │
+│   Tauri + React     │
+│    TypeScript       │
+└──────────┬──────────┘
+           │
+           │ REST API
+           ▼
+┌─────────────────────┐
+│    FastAPI Backend  │
+│       Python        │
+└──────────┬──────────┘
+           │
+           ▼
+┌─────────────────────┐
+│       SQLite        │
+│      Database       │
+└─────────────────────┘

@@ -1,3 +1,4 @@
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
@@ -39,3 +40,23 @@ def get_shares(db: Session = Depends(get_db)):
         .order_by(ShareItem.created_at.desc())
         .all()
     )
+
+
+@router.delete("/shares/{share_id}")
+def delete_share(share_id: int, db: Session = Depends(get_db)):
+    share = (
+        db.query(ShareItem)
+        .filter(
+            ShareItem.id == share_id,
+            ShareItem.user_id == 1,
+        )
+        .first()
+    )
+
+    if not share:
+        raise HTTPException(status_code=404, detail="Share not found")
+
+    db.delete(share)
+    db.commit()
+
+    return {"message": "Share deleted successfully"}

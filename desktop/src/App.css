@@ -1,0 +1,290 @@
+:root {
+  font-family:
+    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  color: #1f2937;
+  background: #f5f7fb;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+textarea {
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin: 8px 0 32px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+/* Share input */
+
+.share-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-form textarea {
+  width: 100%;
+  min-height: 130px;
+  padding: 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #1f2937;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  resize: vertical;
+  outline: none;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.share-form textarea:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+.share-form textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Buttons */
+
+button {
+  border: none;
+  border-radius: 10px;
+
+  padding: 11px 18px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.1s,
+    opacity 0.2s,
+    background-color 0.2s;
+}
+
+.share-form button {
+  align-self: flex-end;
+
+  background: #4f46e5;
+  color: white;
+}
+
+.share-form button:hover {
+  background: #4338ca;
+}
+
+.share-form button:active {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Shares */
+
+.shares-section {
+  margin-top: 48px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.refresh-button {
+  background: #ffffff;
+  color: #4f46e5;
+
+  border: 1px solid #e5e7eb;
+}
+
+.refresh-button:hover {
+  background: #f9fafb;
+}
+
+/* Share cards */
+
+.shares-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-card {
+  padding: 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  text-align: left;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.share-card p {
+  margin: 0 0 10px;
+
+  color: #1f2937;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.share-card small {
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+.empty {
+  padding: 32px;
+
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+
+  color: #9ca3af;
+
+  text-align: center;
+}
+
+/* Errors */
+
+.error {
+  margin-top: 12px;
+
+  color: #dc2626;
+
+  font-size: 14px;
+}
+
+/* Small screens */
+
+@media (max-width: 600px) {
+  .container {
+    padding: 32px 16px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  .share-form button {
+    width: 100%;
+  }
+}
+
+.share-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.copy-button {
+  padding: 6px 12px;
+
+  background: #f3f4f6;
+  color: #4f46e5;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 7px;
+
+  font-size: 12px;
+}
+
+.copy-button:hover {
+  background: #e5e7eb;
+}
+
+
+.share-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.delete-button {
+  padding: 6px 12px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  font-size: 12px;
+}
+
+.delete-button:hover {
+  background: #fee2e2;
+}
+
+
+.share-type {
+  display: inline-block;
+  margin-bottom: 8px;
+
+  padding: 3px 8px;
+
+  background: #f3f4f6;
+  color: #6b7280;
+
+  border-radius: 6px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
